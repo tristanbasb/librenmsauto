@@ -26,7 +26,7 @@ sed -i 's/;date.timezone =/date.timezone = Etc\/Utc/' /etc/php/7.4/cli/php.ini
 timedatectl set-timezone Etc/UTC
 
 rm /etc/mysql/mariadb.conf.d/50-server.cnf
-cp ./conf.txt /etc/mysql/mariadb.conf.d/50-server.cnf
+mv ./conf.txt /etc/mysql/mariadb.conf.d/50-server.cnf
 
 systemctl enable mariadb
 systemctl restart mariadb
@@ -45,7 +45,7 @@ sed -i 's/group = librenms-data/group = librenms/' /etc/php/7.4/fpm/pool.d/libre
 
 sed -i 's/listen = \/run\/php\/php7.4-fpm.sock/listen = \/run\/php-fpm-librenms.sock/' /etc/php/7.4/fpm/pool.d/librenms.conf
 
-cp ./serv.txt /etc/nginx/sites-enabled/librenms.vhost
+mv serv.txt /etc/nginx/sites-enabled/librenms.vhost
 
 rm /etc/nginx/sites-enabled/default
 
