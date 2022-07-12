@@ -26,7 +26,7 @@ sed -i 's/;date.timezone =/date.timezone = Etc\/Utc/' /etc/php/7.4/cli/php.ini
 timedatectl set-timezone Etc/UTC
 
 rm /etc/mysql/mariadb.conf.d/50-server.cnf
-mv ./conf.txt /etc/mysql/mariadb.conf.d/50-server.cnf
+mv conf.txt /etc/mysql/mariadb.conf.d/50-server.cnf
 
 systemctl enable mariadb
 systemctl restart mariadb
